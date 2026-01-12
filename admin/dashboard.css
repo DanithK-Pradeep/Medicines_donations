@@ -1,0 +1,194 @@
+/* ====== Admin Dashboard Theme ====== */
+:root{
+  --sidebar-bg: #0f172a;     /* dark navy */
+  --sidebar-hover: #1e293b;  /* hover navy */
+  --brand: #3b82f6;          /* blue */
+  --text: #0b1220;
+  --muted: #64748b;
+  --card-radius: 16px;
+}
+
+body{
+  background: #f5f7fb;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+}
+
+/* ====== Sidebar ====== */
+.admin-sidebar{
+  background: var(--sidebar-bg);
+  min-height: 100vh;
+  padding: 18px 14px;
+  position: sticky;
+  top: 0;
+}
+
+.admin-sidebar .brand{
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.admin-sidebar .brand-badge{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(59,130,246,0.15);
+  display: grid;
+  place-items: center;
+  color: #93c5fd;
+  font-weight: 800;
+}
+
+.admin-sidebar hr{
+  border-color: rgba(255,255,255,0.12);
+}
+
+.admin-sidebar a{
+  text-decoration: none;
+}
+
+.admin-link{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: rgba(255,255,255,0.82);
+  font-size: 14px;
+  margin-bottom: 8px;
+  transition: 0.2s ease;
+}
+
+.admin-link:hover{
+  background: var(--sidebar-hover);
+  color: #fff;
+  transform: translateX(2px);
+}
+
+.admin-link.active{
+  background: rgba(59,130,246,0.16);
+  color: #fff;
+  border: 1px solid rgba(59,130,246,0.25);
+}
+
+.admin-logout{
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(239,68,68,0.10);
+  color: #fecaca;
+  transition: 0.2s ease;
+}
+
+.admin-logout:hover{
+  background: rgba(239,68,68,0.18);
+  color: #fff;
+}
+
+/* Sidebar icon size */
+.admin-link i,
+.admin-logout i {
+  width: 18px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Brand icon */
+.brand-badge i {
+  font-size: 16px;
+}
+
+
+/* ====== Top Header (optional) ====== */
+.admin-header{
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 25px rgba(2, 6, 23, 0.06);
+  margin-bottom: 16px;
+}
+
+.admin-header .title{
+  margin: 0;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.admin-header .sub{
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ====== Cards ====== */
+.stat-card{
+  border: 0;
+  border-radius: var(--card-radius);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.06);
+  overflow: hidden;
+}
+
+.stat-card .card-body{
+  padding: 18px;
+}
+
+.stat-card .label{
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.stat-card .value{
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.stat-card .chip{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: rgba(59,130,246,0.12);
+  color: var(--brand);
+  margin-top: 10px;
+}
+
+/* ====== Content spacing ====== */
+.admin-content{
+  padding: 22px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px){
+  .admin-sidebar{
+    position: relative;
+    min-height: auto;
+    border-radius: 16px;
+    margin-bottom: 12px;
+  }
+  .admin-content{
+    padding: 12px;
+  }
+}
+
+.badge.bg-warning {
+  background-color: rgba(245,158,11,0.15) !important;
+  color: #d97706;
+}
+.badge.bg-success {
+  background-color: rgba(34,197,94,0.15) !important;
+  color: #16a34a;
+}
+.badge.bg-danger {
+  background-color: rgba(239,68,68,0.15) !important;
+  color: #dc2626;
+}

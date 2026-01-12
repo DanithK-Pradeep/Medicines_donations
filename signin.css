@@ -1,0 +1,85 @@
+/* Reset */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background */
+.bg-container {
+    background-image: url('frame-medical-equipment-desk.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+}
+
+/* Dark overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* Glass card */
+.glass-form {
+    position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
+/* Inputs */
+.form-control {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #272121;
+    border-radius: 10px;
+}
+
+.form-control::placeholder {
+    color: #272121;
+    
+    
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: #0d6efd;
+    box-shadow: none;
+    color: #272121;
+    
+}
+
+/* Button */
+.btn-primary {
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+/* Links */
+a {
+    color: #1100ff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Heading */
+h3 {
+    font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .glass-form {
+        padding: 25px;
+    }
+}

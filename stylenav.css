@@ -1,0 +1,823 @@
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("frame-medical-equipment-desk.jpg") no-repeat center center/cover;
+    filter: blur(4px) brightness(0.95);
+    z-index: -1;
+}
+
+/* =========================
+   SKY BLUE THEME VARIABLES
+========================= */
+:root {
+    --sky-blue: #4db8ff;
+    --sky-blue-dark: #0099e6;
+}
+
+/* =========================
+   NAVBAR (Glass Effect)
+========================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    /* Soft sky-blue tinted glass background */
+    background: rgba(6, 132, 215, 0.32) !important;  /* <-- FIX */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.1),
+        inset 0 0 25px rgba(255, 255, 255, 0.25);
+
+    transition: 0.35s ease;
+}
+
+/* Navbar on scroll */
+.navbar.scrolled {
+    background: rgba(4, 102, 167, 0.45) !important; /* <-- FIX */
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow:
+        0 6px 25px rgba(0, 0, 0, 0.2),
+        inset 0 0 25px rgba(255, 255, 255, 0.22);
+}
+
+/* =========================
+   BRAND / LOGO
+========================= */
+.navbar-brand span {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.9rem;
+    letter-spacing: 1px;
+}
+
+.navbar-brand img {
+    border: 2px solid #ffffff;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* =========================
+   NAVBAR LINKS
+========================= */
+.navbar .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 15px;
+    transition: 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #003d66 !important;
+}
+
+/* Underline animation */
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #003d66;
+    transition: 0.3s;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Contact info */
+.navbar .text-end span {
+    color: white;
+}
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+.btn-outline-primary {
+    border-color: #fff !important;
+    color: #fff !important;
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #fff !important;
+    color: var(--sky-blue) !important;
+}
+
+/*=========================
+   HERO SECTION STYLES
+========================= */
+
+/* HERO MAIN WRAPPER */
+.hero-wrapper {
+    padding: 40px 0;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+/* HERO MAIN BOX - same rounding as sample image */
+.hero-box {
+    width: 90%;
+    border-radius: 30px;
+    padding: 40px 30px;
+    background: linear-gradient(180deg, #4db8ff, #a6dcff 70%);
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        inset 0 0 40px rgba(255, 255, 255, 0.35);
+}
+
+/* HERO CONTENT LAYOUT */
+.hero-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.hero-left {
+    width: 40%;
+    color: white;
+}
+
+/* Badge */
+.hero-badge {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    padding: 6px 18px;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Title */
+.hero-title {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+/* Auto-switching word */
+#switchWord {
+    color: #00b035;
+    transition: 0.5s;
+}
+
+/* Text */
+.hero-text {
+    font-size: 17px;
+    margin: 20px 0;
+    opacity: 0.9;
+}
+
+/* BUTTONS */
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn-hero-primary {
+    background: #ffffff;
+    color: #0077c7;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 10px 20px rgba(255,255,255,0.3);
+    transition: 0.3s;
+}
+.btn-hero-primary:hover {
+    transform: translateY(-4px);
+}
+
+.btn-hero-secondary {
+    background: #000;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    border: none;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+.btn-hero-secondary:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
+/* MINI CARD */
+.small-card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #0077c7;
+    width: fit-content;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* RIGHT SIDE */
+.hero-right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Doctor image card */
+.doctor-card {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(14px);
+    padding: 10px;
+    border-radius: 15px;
+
+    
+    
+
+}
+.doctor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    transition: opacity 0.6s ease;
+}
+.doctor-card:hover .doctor-img {
+    opacity: 0.8;
+}
+
+
+/* Floating call box */
+.call-box {
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: floatCard 4s infinite ease-in-out;
+}
+@keyframes floatCard {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ========================
+   SECTION 2 MAIN WRAPPER
+========================= */
+.what-we-do-section {
+    position:relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+/* Floating background blob */
+.what-we-do-section::before {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -50px;
+    width: 450px;
+    height: 450px;
+    background: rgba(15, 132, 204, 0.3); /* sky blue blur */
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: floatBlob 8s infinite ease-in-out;
+}
+
+@keyframes floatBlob {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* Titles */
+.sec-subtitle {
+    color: #0077cc;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.sec-title {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #222;
+}
+
+.highlight {
+    color: #00a651; /* green */
+}
+
+/* Paragraph */
+.sec-text {
+    color: #555;
+    margin: 18px 0 28px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Facilities Heading */
+.fac-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Facilities List */
+.facility-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.facility-list li {
+    font-size: 17px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+.facility-list i {
+    color: #e63946;
+    font-size: 20px;
+}
+
+/* IMAGE BOX */
+.sec2-img-box {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 30px;
+    display: inline-block;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    animation: floatImg 6s infinite ease-in-out;
+}
+
+.sec2-img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+@keyframes floatImg {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/*------------------------------------------------------ 
+  MOTIVATE SECTION (Matches Screenshot Design)
+-------------------------------------------------------*/
+
+/* STEP A: Section background + spacing */
+.sec4 {
+  background: #f3f6f8;     /* light grey section */
+  padding: 50px 0;         /* top/bottom space */
+}
+
+/* STEP B: Left column alignment */
+#choose {
+  text-align: left;
+  padding-top: 50px;
+}
+
+/* Optional: left side typography */
+.why-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.why-subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* STEP C: Illustration image style + hover */
+.svg {
+  width: 450px;
+  height: 380px;
+  margin-top: 10px;
+  padding-top: 20px;
+  transition: .6s;
+}
+.svg:hover {
+  transform: translateX(15px);
+}
+
+/* STEP D: Card base style (shared for feature-item1 and feature-item2) */
+.feature-item1,
+.feature-item2 {
+  background: white;
+  padding: 40px 25px;
+  border-radius: 22px;              /* rounded card */
+  width: 100%;
+  text-align: center;
+  position: relative;               /* needed for ::before */
+  overflow: hidden;                 /* hides extra part of circle */
+  margin-bottom: 30px;
+  transition: all .4s ease;         /* smooth hover */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* STEP E: Hover lift + stronger shadow */
+.feature-item1:hover,
+.feature-item2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 25px rgba(0,0,0,0.15);
+}
+
+/* STEP F: Semi-circle background shape (the top curve) */
+.feature-item1::before,
+.feature-item2::before {
+  content: "";
+  position: absolute;
+  top: -85px;             /* pushes circle up so only bottom part shows */
+  left: 0;
+  right: 0;
+  width: 180px;
+  height: 180px;
+  margin: auto;
+  border-radius: 50%;     /* makes it a circle */
+  z-index: 1;             /* behind icon + text */
+}
+
+/* STEP G: Two different colors for the top semi-circle */
+.feature-item1::before {
+  background: #f3a8a8;    /* pink */
+}
+.feature-item2::before {
+  background: #89e6e9;    /* blue */
+}
+
+/* STEP H: Icon bubble circle (floating on top of semi-circle) */
+.ft-icon i {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 22px;
+
+  background: #f6fdfd;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2; /* must be higher than ::before */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  color: #26c6d3;
+}
+
+/* STEP I: Card title style */
+.feature-item1 h4,
+.feature-item2 h4 {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2f3b45;
+}
+
+/* STEP J: Card paragraph style */
+.feature-item1 p,
+.feature-item2 p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #4e5b65;
+}
+
+/* STEP K: small spacing fix to align last card like your layout */
+.mtop {
+  margin-top: -20px;
+}
+
+/* section for steps */
+
+.steps-section{
+  background: #c9dadc;
+  padding: 80px 0;
+  box-shadow: #000;
+}
+
+.steps-title{
+  font-size: 42px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.steps-timeline{
+  position: relative;
+  padding-left: 70px;
+}
+
+.steps-timeline::before{
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  width: 2px;
+  height: calc(100% - 20px);
+  background: #ff4d4d;
+}
+
+.step-item{
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.step-number{
+  position: absolute;
+  left: -70px;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #ff4d4d;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #111;
+}
+
+.step-content h4{
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.step-content p{
+  font-size: 17px;
+  color: #444;
+  margin: 0;
+}
+
+.steps-note{
+  margin-top: 20px;
+  font-size: 15px;
+  color: #222;
+}
+
+.steps-img{
+  max-width: 90%;
+  height: 500px;
+  transition: .6s;
+  
+}
+
+.steps-img:hover{
+  transform: translateX(15px);
+}
+
+/* Button Styling */
+.btn-success {
+  padding: 12px 40px; /* Larger padding */
+  font-size: 18px;     /* Larger text */
+  border-radius: 25px; /* Rounded edges */
+  background-color: #28a745; /* Green color */
+  color: white;       /* White text */
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  
+}
+
+.btn-success:hover {
+  background-color: #5e8967; /* Darker green on hover */
+}
+/*------------------------------------------------------ 
+  DONATE SECTION STYLES
+------------------------------------------------------*/
+
+.donate-section {
+  padding: 60px 0;
+  background-color: #f9fafb; /* light gray background */
+}
+
+.section-titles {
+  font-size: 28px;
+  font-weight: 600;
+  color: #e73a3e;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-descriptions {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.donate-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donate-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.donate-card i {
+  font-size: 40px;
+  color: #007CC7; /* Blue color for the icons */
+  margin-bottom: 20px;
+}
+
+.donate-card h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #007CC7;
+  margin-bottom: 20px;
+}
+
+.donate-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+
+
+/*------------------------------------------------------ 
+  CONTACT US SECTION STYLES
+------------------------------------------------------*/
+.contact-us-section {
+  padding: 80px 0;
+  background: linear-gradient(to right, #99d2ef, #0099cc); /* Blue gradient background */
+}
+
+.section-title {
+
+  font-size: 36px;
+  font-weight: 500;
+  color: #000000;
+  text-align: left;
+  margin-top: 70px;
+  
+}
+
+.section-description {
+  font-size: 50px;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+  margin-top: 75px;
+  transition: 0.6s;
+
+}
+
+.section-description:hover{
+  transform: translateX(15px);
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.6s;
+}
+.contact-form:hover{
+  transform: translateY(-10px);
+}
+
+.form-control {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* =========================
+   FOOTER STYLES
+========================= */
+.footer {
+  background-color: #333; /* Dark background for the footer */
+  color: white; /* White text */
+  padding: 40px 0;
+}
+
+.footer h4, .footer h5 {
+  color: #fdb800; /* Yellow for the headings */
+  font-weight: bold;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-links {
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ffffff; /* Yellow links */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #fff; /* White color on hover */
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icon {
+  font-size: 20px;
+  color: #ffffff;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #fff; /* Change color to white on hover */
+}
+
+footer .text-center {
+  color: #fdb800;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+footer .text-center span {
+  font-weight: bold;
+}
+
+
+
+

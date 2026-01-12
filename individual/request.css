@@ -1,0 +1,13 @@
+body {
+            background: #f4f8fb;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .req-card {
+          border-radius: 16px;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+            border: none;
+        }
+
+
+
